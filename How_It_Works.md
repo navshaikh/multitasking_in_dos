@@ -1,6 +1,6 @@
 ## How it works?
 ### Multitasking
-A task, which is to be run as a preemptive multitasking 'thread' alongside other tasks, is defined and declared as a C function in a program. This function runs in the context of thread and register definitions shown below. Terminate and Stay Resident (TSR) is used to override the Interrupt Service Routine (ISR) for *Timer* interrupt pointing to a new definition of *Context Switcher*. This allows the system to control the tasks and manage their executions when *Timer* interrupt is generated.
+A task, which is to be run as a preemptive multitasking 'thread' alongside other tasks, is defined and declared as a function in a C++ program. This function runs in the context of thread and register definitions shown below. Terminate and Stay Resident (TSR) is used to override the Interrupt Service Routine (ISR) for *Timer* interrupt pointing to a new definition of *Context Switcher*. This allows the system to control the tasks and manage their executions when *Timer* interrupt is generated.
 
 ``` C++
 struct registers {
@@ -67,7 +67,7 @@ SYSCALL sendSignal(int thread_id, it signo)
 ```
 ### Synchronization Constructs
 #### Semaphores
-Semaphores are implemented using static arrays and provide the mechanism by which system can guarantee that a task in critical section is safe from the intervention of other tasks, which can possibly corrupt/update its data. Semaphore implementation provides system calls to support  *create*, *wait*, *release* and *destroy* functions on our semaphores. These are:
+Semaphores are implemented using static arrays and provide the mechanism by which system can guarantee that a task in critical section is safe from the intervention of other tasks, which can possibly corrupt/update its data. Semaphore implementation provides system calls to support  *create*, *wait*, *release* and *destroy* functions.
 ```C++
 int semCreate(int initValue)
 SYSCALL semWait(int handle)
