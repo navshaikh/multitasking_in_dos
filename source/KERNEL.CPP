@@ -21,12 +21,12 @@ DEFINE_PRIO_QUEUE(ready,MAX_THREADS);
 int id1, id2;
 
 void cli() {
-	//	interruptCount++;
+	// interruptCount++;
 	asm {cli}
 }
 
 void sti() {
-	//	interruptCount--;
+	// interruptCount--;
 	asm {sti}
 }
 
@@ -46,15 +46,15 @@ void interrupt contextSwitcher(...) {
 		// Get the signal entry from the signal mapping table
 		signo = threadTable[currentTID].signals[threadTable[currentTID].sigCount-1];
 
-    // Forcing to execute handler at mapping location 'signo'
-	  // IMPORTANT : +16 is used to access the handler code without
-	  // forcing the register stacking
+		// Forcing to execute handler at mapping location 'signo'
+		// IMPORTANT : +16 is used to access the handler code without
+		// forcing the register stacking
 		r->ip = FP_OFF(signalMap[signo]) + 16;
 		r->cs = FP_SEG(signalMap[signo]);
 		threadTable[currentTID].sigCount--;
 		signalCall=false;
 	} else {
-		//		cli();
+		// cli();
 		if (currentTID != CS_START) {
 			threadTable[currentTID].ss = _SS;
 			threadTable[currentTID].sp = _SP;
@@ -148,7 +148,7 @@ THREAD nullThread2(){
 
 void initSOS() {
 
-	interruptCount = 0;
+	// interruptCount = 0;
 
 	initSignal();
 	initSem();

@@ -67,7 +67,7 @@ SYSCALL freemem (char* block, int size) {
 		q->memLen += size;
 
 	else {
-		//Make this block a head
+		// Make this block a head
 		if (q == NULL){
 			((struct memType*)block)->memLen = size;
 			((struct memType*)block)->next = p;
@@ -83,7 +83,7 @@ SYSCALL freemem (char* block, int size) {
 		}
 	}
 
-	//Merge the blocks
+	// Merge the blocks
 	if ((char*)p!=NULL && ((char*)q + q->memLen) == (char*)p) {
 		q->memLen += p->memLen;
 		q->next = p->next;

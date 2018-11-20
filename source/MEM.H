@@ -8,6 +8,6 @@ struct memType {
 
 extern struct memType *memList;
 void initMem(int nBytes);
-char*getmem(int nBytes);
+char *getmem(int nBytes);
 SYSCALL freemem(char *block,int size);
 int getFreeSize();

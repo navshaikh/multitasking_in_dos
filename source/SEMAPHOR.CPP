@@ -29,7 +29,7 @@ SYSCALL semWait(int handle) {
 
 	if (semaphore[handle].count <= 0) {
 		addPrioQueue(semaphore[handle].blocking, currentTID,
-									threadTable[currentTID].priority);
+							threadTable[currentTID].priority);
 		threadTable[currentTID].state = SEMBLOCK;
 		semaphore[handle].count--;
 		sti();

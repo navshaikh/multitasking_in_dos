@@ -3,7 +3,7 @@
 threadTableType threadTable[MAX_THREADS];
 int topThreadEntry, freeThreadEntry;
 
-//Thread table management routines
+// Thread table management routines
 void initThreadTable() {
 	topThreadEntry = -1;
 	freeThreadEntry = 0;

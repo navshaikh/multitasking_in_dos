@@ -4,8 +4,8 @@
 
 extern queueType ready[];
 
-//Create a new entry in ThreadTable, in suspended state
-//and returns the ThreadID
+// Create a new entry in ThreadTable, in suspended state
+// and returns the ThreadID
 
 int createThread(THREAD(*thread)(), int priority, int stacksize, char *name) {
 	int id = getFreeThreadEntry();
