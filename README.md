@@ -1,4 +1,4 @@
-<img width="150" height="40" align="left" style="float: left; margin: 0 10px 0 0;" alt="Multi-DOS" src="Multi-DOS.png">   
+<img width="408" height="73" align="left" style="float: left; margin: 0 10px 0 0;" alt="Multi-DOS" src="Multi-DOS.png">   
 
 # Multitasking in MS-DOS
 
